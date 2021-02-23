@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./layui/css/layui.css">
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/icofont/icofont/icofont.css">
+</head>
+
+<body>
+
+    <div class="middle">
+        <div class="logo">
+            <img src="./img/logo.png" alt="">
+        </div>
+
+        <div class="login">
+            <div class="login_logo"><img src="./img/login_title.png" alt=""></div>
+
+            <div class="login_log">
+                <form action="">
+                    <div class="layui-input-block">
+                        <input type="text" name="title" required  lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+                        <span class="icofont-cop icon"></span>
+                      </div>
+                      <div class="layui-input-block">
+                        <input type="password" name="title" required  lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+                        <span class="icofont-court icon"></span>
+                      </div>
+                    <button type="button" class="layui-btn login-btn">登录</button>
+                </form>
+                <div class="link_reg">
+                    <a href="javascript:;">去注册</a>
+                </div>
+            </div>
+
+
+
+            <div class="login_reg" style="display: none;">
+                <form action="">
+                    <div class="layui-input-block">
+                        <input type="text" name="title" required  lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+                        <span class="icofont-cop icon"></span>
+                      </div>
+                      <div class="layui-input-block">
+                        <input type="password" name="title" required  lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+                        <span class="icofont-court icon"></span>
+                      </div>
+                      <div class="layui-input-block">
+                        <input type="password" name="title" required  lay-verify="required" placeholder="请再次输入密码确定" autocomplete="off" class="layui-input">
+                        <span class="icofont-court icon"></span>
+                      </div>
+                    <button type="button" class="layui-btn login-btn" style="background-color: brown;">注册</button>
+                </form>
+                <div class="link_log">
+                    <a href="javascript:;">去登录</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</body>
+
+<script src="./jq/jQuery.min.js"></script>
+<script src="./js/login.js"></script>
+
+</html>
