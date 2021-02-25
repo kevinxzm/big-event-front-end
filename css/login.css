@@ -9,6 +9,7 @@ html, body {
     /* height: 200px; */
     background: url(../img/login_bg.jpg) no-repeat center;
     background-size: cover;
+    box-sizing: border-box;
 }
 
 .middle {
@@ -17,26 +18,30 @@ html, body {
 }
 
 .login {
+    position: absolute;
     padding: 0 20px;
-    margin: 0px auto;
+    /* margin: 0px auto; */
     width: 400px;
     height: 310px;
     background-color: white;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
 }
 
 .login_logo {
-    height: 40px;
-    
+    height: 50px;
+    background: url(../img/login_title.png) no-repeat center;
     text-align: center;
     padding-top: 12px;
-    
 }
 
 .layui-input-block {
     margin-left: 0;
 }
 
-.login_log input, .login_reg input{
+.login_log input, .login_reg input {
     position: relative;
     margin-bottom: 20px;
     padding-left: 40px;
@@ -50,8 +55,6 @@ html, body {
     color: rgb(10, 10, 150);
 }
 
-
-
 .login-btn {
     width: 100%;
 }
@@ -61,13 +64,3 @@ html, body {
     justify-content: flex-end;
     margin: 10px 20px 0 0;
 }
-
-
-
-
-
-
-
-
-
-
