@@ -40,7 +40,10 @@ $('.form_log').on('submit', function (e) {
         success: function (res) {
             if(res.status ==0) {
                 localStorage.setItem('token',res.token);
+                console.log(res.token);
                 location.assign('/index.html');
+            } else {
+                layer.msg(res.message);
             }
         }
     })

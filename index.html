@@ -1,12 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>我的页面</title>
+  <link rel="stylesheet" href="./library/layui/css/layui.css">
+  <link rel="stylesheet" href="./css/index.css">
 </head>
-<body>
-    haha
+
+<body class="layui-layout-body">
+  <div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+      <div class="layui-logo"><img src="./img/logo.png" alt=""></div>
+      <!-- 头部区域（可配合layui已有的水平导航） -->
+
+      <ul class="layui-nav layui-layout-right userinfor">
+        <li class="layui-nav-item">
+          <!--   -->
+          <a href="javascript:;" style="position: relative;">
+            <span class="user_cap per_cap">A</span>
+            个人资料
+          </a>
+          <dl class="layui-nav-child bar_user">
+            <dd><a href="./user/user_infor.html" target="user_index">基本资料</a></dd>
+            <dd><a href="./user/user_img.html" target="user_index">更换头像</a></dd>
+            <dd><a href="./user/user_password.html" target="user_index">重置密码</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item log_out"><a href="javascript:;">退出登录</a></li>
+      </ul>
+    </div>
+
+    <div class="layui-side layui-bg-black">
+      <div class="layui-side-scroll">
+        <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+        <ul class="layui-nav layui-nav-tree" lay-shrink="all" lay-filter="test">
+          <li class="layui_username">
+            <span class="user_cap">A</span> <a href="javascript:;" class="user_wel"> 欢迎 </a>
+          </li>
+          <li class="layui-nav-item layui-this">
+            <a href="./user/dashboard.html" target="user_index" id="user_index"><span class="layui-icon layui-icon-user"
+                style="margin-right:12px"></span>首页 </a>
+          </li>
+          <li class="layui-nav-item ">
+            <a href="javascript:;"><span class="layui-icon layui-icon-user" style="margin-right:12px"></span>文章管理</a>
+            <dl class="layui-nav-child">
+              <dd><a href="./article/arti_cata.html" target="user_index"><span class="layui-icon layui-icon-user"
+                    style="margin-right:12px"></span>文章类别</a></dd>
+              <dd><a href="javascript:;"><span class="layui-icon layui-icon-user"
+                    style="margin-right:12px"></span>文章列表</a></dd>
+              <dd><a href="javascript:;"><span class="layui-icon layui-icon-user"
+                    style="margin-right:12px"></span>发布文章</a></dd>
+            </dl>
+          </li>
+          <li class="layui-nav-item">
+            <a href="javascript:;"><span class="layui-icon layui-icon-user" style="margin-right:12px"></span>个人中心</a>
+            <dl class="layui-nav-child ">
+              <dd><a href="./user/user_infor.html" target="user_index"><span class="layui-icon layui-icon-user"
+                    style="margin-right:12px"></span>基本资料</a></dd>
+              <dd><a href="./user/user_img.html" target="user_index"><span class="layui-icon layui-icon-user"
+                    style="margin-right:12px"></span>更换头像</a></dd>
+              <dd><a href="./user/user_password.html" target="user_index"><span class="layui-icon layui-icon-user"
+                    style="margin-right:12px"></span>重置密码</a></dd>
+            </dl>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="layui-body" style="overflow: hidden;">
+      <!-- 内容主体区域(本来右侧所放置的内容) -->
+      <iframe src="./article/arti_cata.html" frameborder="0" name="user_index" style="width: 100%; height: 100%; ">
+      </iframe>
+    </div>
+
+    <div class="layui-footer index_footer">
+      <!-- 底部固定区域 -->
+      © layui.com - 底部固定区域
+    </div>
+
+
+  </div>
+  <script src="./library/jq/jQuery.min.js"></script>
+  <script src="./library/layui/layui.all.js"></script>
+  <script src="./js/prereJs.js"></script>
+  <script src="./js/index.js"></script>
+
 </body>
+
 </html>

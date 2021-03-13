@@ -6,74 +6,249 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./layui/css/layui.css">
-    <script src="./layui/layui.all.js"></script>
+    <link rel="stylesheet" href="./library/layui/css/layui.css">
+    <script src="./library/layui/layui.all.js"></script>
+    <script src="./library/jq/jQuery.min.js"></script>
+    <style>
+        body {
+            height: 2000px;
+        }
+
+        .kevin {
+            width: 500px;
+            height: 50px;
+            background-color: #fff;
+            line-height: 50px;
+        }
+
+        .kevin a {
+            background-color: #aaa;
+            margin: 0 20px;
+        }
+
+        .kevin a:hover {
+            background-color: red;
+
+        }
+
+        .main {
+            width: 1000px;
+            height: 200px;
+            background-color: blue;
+        }
+
+        .userimg {
+            width: 100px;
+            height: 100px;
+
+            /* background: url(./img/1.png) no-repeat; */
+            background-size: 100% 100%;
+            background-position: center;
+        }
+
+        .list_title li {
+            float: left;
+            width: 100px;
+            height: 40px;
+            background-color: skyblue;
+            /* margin-top: 1px; */
+        }
+    </style>
 </head>
 
 <body>
-    HTMLlayui.code
-    <form class="layui-form" action="">
+    <div class="kevin">
+        <a href="./user/dashboard.html" target="fm">第一个</a>
+        <a href="http://www.baidu.com" target="fm">第二个</a>
+        <a href="javascript:;" id="button3">第三个</a>
+    </div>
 
+    <div class="main">
+        <iframe frameborder="0" name="fm" style="width: 100%; height: 100%;"></iframe>
+
+
+    </div>
+    <div class="main2" style="display: none;">
+
+        name <input type="text">
+    </div>
+
+    <script>
+        $('#button3').click(function () {
+            $('.main2').show();
+            $('.main').hide();
+
+        })
+
+        $('.kevin a[target]').click(function () {
+            $('.main2').hide();
+            $('.main').show();
+            console.log(2);
+
+        })
+
+
+
+    </script>
+
+
+    <div class="userimg" style="background:url(./img/1.png); background-size: 100% 100%;
+background-position: center;"></div>
+
+
+
+    <div class="list">
+        <a href="javascript:;" style="display: inline-block; width: 100px; height: 100px; background-color: pink;">
+            list</a>
+        <ul class="list_title" style="display: none;">
+            <li><a href="javascript:;">1</a> </li>
+            <li><a href="javascript:;">2</a> </li>
+            <li><a href="javascript:;">3</a> </li>
+        </ul>
+
+    </div>
+
+    <script>
+
+        $('.list').mouseenter(function () {
+            $('.list_title').show();
+        })
+
+        $('.list').mouseleave(function () {
+            $('.list_title').hide();
+        })
+        $('.list_title a').click(function () {
+            $('.list_title').hide();
+
+        })
+
+    </script>
+
+
+
+    <div>
+        <table>
+            <tr>
+                <input type="text" value="12324">
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+
+            <tr>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        var foo = 1;
+        function fn() {
+
+            console.log(foo);
+            foo = 10;
+
+            return;
+            function foo() { }
+        }
+
+        fn();
+        console.log(foo);
+
+        var x = 1, y = 0, z = 0;
+        var add = function (x) {
+            return (x = x + 1);
+        }
+        y = add(x);
+        function add(x) {
+            return (x = x + 3)
+        }
+
+        z = add(x);
+        console.log(x, y, z);
+
+
+        function b() { }
+        var b;
+        console.log(b);
+        b = 2;
+        console.log(b);
+
+
+
+
+
+
+    </script>
+
+    <div class="indexchange" style="height: 10px; background-color: pink;" data-index='22'></div>
+    <script>
+        console.log($('.indexchange'));
+
+        $('.indexchange').attr('uname', 'kevin');
+
+        console.log($('.indexchange').attr('uname'));
+        console.log($('.indexchange').data('index'));
+
+
+
+
+    </script>
+
+
+    <!-- layui表单赋值问题 -->
+
+    <form class="layui-form ediForm" lay-filter ="ediForm">
+        <div class="layui-form-item">
+            <label class="layui-form-label">分类名称</label>
+            <div class="layui-input-block">
+                <input type="text" name="name" required lay-verify="required" placeholder="请输入名称" autocomplete="off"
+                    class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">分类别名</label>
+            <div class="layui-input-block">
+                <input type="text" name="alias" required lay-verify="required" placeholder="请输入别名" autocomplete="off"
+                    class="layui-input">
+            </div>
+        </div>
         <div class="layui-input-block">
-            <input type="text" name="title" required lay-verify="required" placeholder="请输入标题" autocomplete="off"
-                class="layui-input">
+            <button class="layui-btn layui-btn-sm" lay-submit lay-filter="formDemo" id="ediBtn">立即提交</button>
 
         </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">密码框</label>
-            <div class="layui-input-inline">
-                <input type="password" name="password" required lay-verify="required" placeholder="请输入密码"
-                    autocomplete="off" class="layui-input">
-            </div>
-            <div class="layui-form-mid layui-word-aux">辅助文字</div>
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">选择框</label>
-            <div class="layui-input-block">
-                <select name="city" lay-verify="required">
-                    <option value=""></option>
-                    <option value="0">北京</option>
-                    <option value="1">上海</option>
-                    <option value="2">广州</option>
-                    <option value="3">深圳</option>
-                    <option value="4">杭州</option>
-                </select>
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">复选框</label>
-            <div class="layui-input-block">
-                <input type="checkbox" name="like[write]" title="写作">
-                <input type="checkbox" name="like[read]" title="阅读" checked>
-                <input type="checkbox" name="like[dai]" title="发呆">
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">开关</label>
-            <div class="layui-input-block">
-                <input type="checkbox" name="switch" lay-skin="switch">
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">单选框</label>
-            <div class="layui-input-block">
-                <input type="radio" name="sex" value="男" title="男">
-                <input type="radio" name="sex" value="女" title="女" checked>
-            </div>
-        </div>
-        <div class="layui-form-item layui-form-text">
-            <label class="layui-form-label">文本域</label>
-            <div class="layui-input-block">
-                <textarea name="desc" placeholder="请输入内容" class="layui-textarea"></textarea>
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <div class="layui-input-block">
-                <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
-                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
-            </div>
-        </div>
+
+
+
+        <script src="./library/layui/layui.all.js"></script>
+
+        <script>
+
+            $('.ediForm').click(function () {
+                console.log(1);
+            })
+
+            
+            var kevin = {
+                name: 'kevin',
+                alias: 'haha'
+            }
+            
+            var form = layui.form;
+            form.val('ediForm', kevin);
+
+
+
+
+
+        </script>
+
     </form>
+
+
 
 </body>
 

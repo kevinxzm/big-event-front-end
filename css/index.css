@@ -1,0 +1,73 @@
+.userinfor {
+    right: 0px;
+    top: 0px;
+}
+
+.layui_username {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 200px;
+    height: 65px;
+    font-size: 35px;
+}
+
+/* .layui_username span {
+    background: url();
+    margin-right: 10px;
+    width: 35px;
+    height: 35px;
+    background-color: green;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 50%;
+    font-size: 25px;
+    background-position: center;
+} */
+
+.layui_username a {
+    
+    margin-right: 20px;
+    color: #fff;
+}
+
+
+
+
+.index_footer {
+    text-align: center;
+}
+
+.user_cap {
+    background-position: center;
+    
+
+
+
+
+
+    margin-right: 10px;
+    width: 35px;
+    height: 35px;
+    background-color: green;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 50%;
+    font-size: 25px;
+    background-position: center;
+}
+
+.per_cap {
+    position:absolute;
+    left: -25px;
+    top: 11px;
+}
+
+
+.user_wel {
+    user-select: none;
+}
+
+a {
+    transition: 0s;
+}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../library/layui/css/layui.css">
+    <link rel="stylesheet" href="../css/article/arti_cata.css">
+
+
+</head>
+
+<body>
+    <div class="layui-card cata_body">
+        <div class="layui-card-header cata_header">
+            <span class="kevin">文章类别管理</span>
+            <button type="button" class="layui-btn layui-btn-normal layui-btn-sm cata_add">添加类别</button>
+        </div>
+        <div class="layui-card-body cata_body">
+            <table class="layui-table">
+                <colgroup>
+                    <col width="400">
+                    <col width="400">
+                    <col>
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>分类名称</th>
+                        <th>分类别名</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody class="article_body">
+
+
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+    <!-- 1. 导入文章数据 -->
+
+    <script type="text/html" id="article_content">
+    {{ each data }}
+    <tr>
+
+        <!-- 第一种我原来常写的方法 -->
+        <td style="display: none;" class="artId">{{$value.Id}}</td>
+
+        <!-- 第二种input的方法 -->
+        
+
+        <!-- <input type="text" value="211"> -->
+        <td>{{$value.name}}</td>
+        <td>{{$value.alias}}</td>
+        <td class="cata_edi">
+            <button type="button" class="layui-btn layui-btn-xs" id="artEdi" data-id ="{{$value.Id}}" data-name ="{{$value.name}}" data-alias ="{{$value.alias}}" >编辑</button>
+            <button type="button" class="layui-btn layui-btn-xs layui-btn-danger" id="artDel" data-num = "{{$value.Id}}">删除</button>
+        </td>
+    </tr>
+    {{/each}}
+    </script>
+
+    <!-- 2. 插入添加类别 -->
+
+    <script type="text/html" id="cata_add">
+        <form class="layui-form form_add">
+            <div class="layui-form-item">
+             <label class="layui-form-label">分类名称</label>
+              <div class="layui-input-block">
+                <input type="text" name="name" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+              </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">分类别名</label>
+                <div class="layui-input-block">
+                  <input type="text" name="alias" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+
+            <div class="layui-input-block">
+                <button class="layui-btn cata_add_sub" lay-submit lay-filter="formDemo">立即提交类别</button>
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+            </div>
+        </form>
+    </script>
+
+
+    <!-- 3. 插入编辑类别 -->
+    <script type="text/html" id="ediText">
+        <form class="layui-form ediForm" lay-filter="ediForm">
+            <input type="hidden" name="Id">
+            <div class="layui-form-item">
+                <label class="layui-form-label">分类名称</label>
+                <div class="layui-input-block">
+                    <input type="text" name="name" required lay-verify="required" placeholder="请输入名称" autocomplete="off"
+                        class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">分类别名</label>
+                <div class="layui-input-block">
+                    <input type="text" name="alias" required lay-verify="required" placeholder="请输入别名" autocomplete="off"
+                        class="layui-input">
+                </div>
+            </div>
+            <div class="layui-input-block">
+                <button class="layui-btn layui-btn-sm" lay-submit lay-filter="formDemo" id="ediBtn">提交修改</button>
+            </div>
+        </form>
+
+    </script>
+
+
+
+
+
+</body>
+
+
+<script src="../library/jq/jQuery.min.js"></script>
+<script src="../library/layui/layui.all.js"></script>
+<script src="../js/prereJs.js"></script>
+<script src="../library/template-web.js"></script>
+
+<script src="../js/article/arti_cata.js"></script>
+
+</html>

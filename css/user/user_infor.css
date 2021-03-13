@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding: 10px ;
+    background-color: #f2f3f5;
+}
+
+a {
+    transition: 0s;
+}
+
+.user_infor {
+    background-color: #fff;
+}
+
+.user_infor_head {
+    height: 50px;
+    font-size: 15px;
+    line-height: 50px;
+    padding-left: 20px;
+    border-bottom: 1px solid #f2f3f5;
+}
+
+.user_infor form {
+
+    padding: 20px 0;
+}
+
+.user_infor input {
+    width: 350px;
+}
+

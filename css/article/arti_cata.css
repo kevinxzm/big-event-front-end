@@ -1,0 +1,42 @@
+body {
+    padding: 10px;
+    background-color: #f2f3f5;
+}
+
+.cata_body {
+    background-color: #fff;
+}
+
+.cata_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    border-bottom: 1px solid #f2f3f5;
+    line-height: 50px;
+    padding-left: 20px;
+}
+
+.cata_edi {
+    display: flex;
+}
+
+.layui-form-label {
+    padding-left: 0;
+    padding-right: 0;
+    width: 70px;
+    
+} 
+
+.layui-input-block {
+    margin-left: 90px;
+} 
+
+.form_add {
+    padding: 20px 10px;
+}
+
+.ediForm {
+    padding: 10px 20px 10px 0;
+}
+
